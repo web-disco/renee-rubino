@@ -19,7 +19,7 @@ export default defineConfig({
       input: resolve(__dirname, "/js/index.js"),
       output: {
         entryFileNames: "[name].js",
-        format: "es",
+        format: "umd",
         compact: true,
       },
     },
