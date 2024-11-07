@@ -1,20 +1,27 @@
-export default {
+// vite.config.js
+import { defineConfig } from "vite";
+import { resolve } from "path";
+
+export default defineConfig({
+  root: "src",
   server: {
     cors: "*",
     hmr: {},
+    fs: {
+      allow: [".."],
+    },
   },
   build: {
     minify: true,
-    outDir: "dist",
     emptyOutDir: true,
+    outDir: resolve(__dirname, "dist"),
     rollupOptions: {
-      input: "src/js/index.js",
+      input: resolve(__dirname, "/js/index.js"),
       output: {
-        format: "umd",
-        entryFileNames: "index.js",
+        entryFileNames: "[name].js",
+        format: "es",
         compact: true,
       },
     },
   },
-  envDir: "../",
-};
+});
