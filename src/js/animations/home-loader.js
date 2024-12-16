@@ -48,7 +48,7 @@ export const homeLoaderAnimation = () => {
     mainImage,
     {
       duration: 1,
-      scale: 1.1,
+      scale: 1.08,
     },
     "<0.45"
   );
